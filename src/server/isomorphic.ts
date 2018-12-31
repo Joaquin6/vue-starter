@@ -9,7 +9,7 @@ import App from '../app/app/App/App.vue';
 import { createApp, IApp } from '../app/app';
 import { IState } from '../app/state';
 import { IAppConfig } from '../app/config/IAppConfig';
-import { PersistCookieStorage } from '../app/shared/plugins/vuex-persist/PersistCookieStorage';
+import { PersistCookieStorage } from 'vue-starter-vuex-persist/dist/PersistCookieStorage';
 import { Logger } from './utils/Logger';
 import { initHttpService } from '../app/shared/services/HttpService/HttpService';
 
@@ -59,7 +59,7 @@ const setI18nDefaultValues = (store: Store<IState>, i18n: VueI18n) => {
 
   try {
     defaultMessages = DEVELOPMENT
-      ? JSON.parse(fs.readFileSync(path.resolve(`i18n/${lang}.json`)).toString())
+      ? JSON.parse(fs.readFileSync(path.resolve(`./i18n/${lang}.json`)).toString())
       : nodeRequire(`../../i18n/${lang}.json`);
   } catch (e) {
     defaultMessages = nodeRequire(`../../i18n/en.json`);
