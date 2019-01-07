@@ -9,7 +9,12 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "rootDirs": ["src"]
   },
   "include": ["./src/**/*", "./src/**/*.vue"],
   "exclude": ["./node_modules", "./dist", "./**/*.stories.ts"]
